@@ -43,7 +43,13 @@ export class Api {
     mostrarDeudaPorPersona(idPersona: number): Observable<DeudaResponse[]> {
         return this.http.get<DeudaResponse[]>(`${this.apiUrl}/deuda/persona/${idPersona}`);
     }
-    
+    totalDeudaPorPersona(idPersona: number): Observable<String> {
+        return this.http.get<String>(`${this.apiUrl}/deuda/total/${idPersona}`);
+    }
+
+    mostrarDeudasPorEstadoYPersona(estado: boolean, idPersona: number): Observable<DeudaResponse[]> {
+        return this.http.get<DeudaResponse[]>(`${this.apiUrl}/deuda/persona/${idPersona}/estado/${estado}`);
+    }    
     
 
 }
